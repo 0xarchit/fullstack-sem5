@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode Toggle</title>
+</head>
+<body>
+
+  <p id="para">Light Mode</p>
+
+  <button id="submit-btn">Toggle Theme</button>
+
+  <script>
+    const btn = document.querySelector("#submit-btn");
+    const para = document.querySelector("#para");
+
+    let darkMode = false;
+
+    btn.addEventListener("click", () => {
+      darkMode = !darkMode;
+
+      if (darkMode) {
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+        para.innerText = "Dark Mode";
+      } else {
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        para.innerText = "Light Mode";
+      }
+    });
+  </script>
+
+</body>
+</html>
