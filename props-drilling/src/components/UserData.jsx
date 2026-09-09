@@ -1,26 +1,14 @@
-import { useState } from 'react'
+import { useContext } from 'react'
+import UserContext from './UserContext'
 
 export default function UserData() {
-  const [data, setData] = useState({
-    name: "AJ",
-    age: -69,
-    city: "Meowthra"
-  })
-
-  function updateName() {
-    setData({
-      ...data,
-      name: "Arc"
-    })
-  }
-
+  const user = useContext(UserContext);
   return (
     <>
-      <h1>Name: {data.name}</h1>
-      <h1>Age: {data.age}</h1>
-      <h1>City: {data.city}</h1>
-
-      <button onClick={updateName}>Update Name</button>
+      <h1>User Data</h1>
+      <p>Name: {user.name}</p>
+      <p>Age: {user.age}</p>
+      <p>City: {user.city}</p>
     </>
   )
 }

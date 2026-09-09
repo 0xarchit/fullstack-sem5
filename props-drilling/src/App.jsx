@@ -1,11 +1,19 @@
 import './App.css'
-import UserData from './components/UserData'
+import UserContext from './components/UserContext'
+import UserData from './components/UserData';
 
 
 function App() {
+  const user = {
+      name: "AJ",
+      age: -69,
+      city: "Meowthra"
+  };
   return (
     <>
-      <UserData />
+      <UserContext.Provider value={user}>
+        <UserData />
+      </UserContext.Provider>
     </>
   )
 }
